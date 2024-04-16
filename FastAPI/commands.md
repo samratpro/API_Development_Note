@@ -28,7 +28,7 @@ async def root(data):
     # root(data:int)
     return {"data": data}
     # return ['data1','data2']
-    # http://127.0.0.1:8000/items/data
+# http://127.0.0.1:8000/items/data
 ```
 
 ### Query Parameter
