@@ -39,7 +39,7 @@ async def read_item(start: int = 0, end: int=3):
     return fake_list[start:end]
 # http://127.0.0.1:8000/items/?start=0&end=3
 ```
-### Query Parameter with logic
+### Query + Path Parameter with logic
 ```py
 @app.get("/items/{item_id}")
 async def read_item(item_id: str, q: str | None = None):
