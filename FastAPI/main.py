@@ -7,7 +7,7 @@ from app.routes import (
 
 app = FastAPI(
     title="Custom Title",
-    description="""Custom description.""",
+    description="Custom description.",
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
