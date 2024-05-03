@@ -1,5 +1,9 @@
 import uvicorn
 from fastapi import FastAPI
+from app.routes import (
+    home,
+    users,
+)
 
 app = FastAPI(
     title="Custom Title",
@@ -11,11 +15,8 @@ app = FastAPI(
 )
 
 
-@app.get('/')
-async def home():
-    return 'none'
-
-
+app.include_router(home.router)
+app.include_router(users.router)
 
 if __name__ == "__main__":
     uvicorn.run(app, port=4000)
