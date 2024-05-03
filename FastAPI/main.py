@@ -4,6 +4,7 @@ from app.routes import (
     home,
     users,
 )
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Custom Title",
@@ -14,6 +15,14 @@ app = FastAPI(
     openapi_url="/openapi.json",
 )
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(home.router)
 app.include_router(users.router)
